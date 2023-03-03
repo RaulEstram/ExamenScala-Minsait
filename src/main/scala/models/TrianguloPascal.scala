@@ -1,7 +1,18 @@
 package models
 
 object TrianguloPascal {
-  def apply(rows: Int): Unit = {
+
+  def apply(rows: Int): List[Int] = {
+    val triangle = for { row <- 0 until rows} yield {
+      for { col <- 0 to row } yield {
+        pascal(row, col)
+      }
+    }
+    triangle.last.toList
+  }
+
+
+  def printTrianguloPascal(rows: Int): Unit = {
     for (row <- 0 until rows) {
       for (col <- 0 to row) {
         print(pascal(row, col) + " ")
