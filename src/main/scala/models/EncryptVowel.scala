@@ -2,13 +2,8 @@ package models
 
 object EncryptVowel {
   def apply(vowelsList: List[Char]): List[Char] = {
-    vowelsList.map {
-      case c if c == 'a' => 'L'
-      case c if c.equals('e') => '9'
-      case c if c.equals('i') => '$'
-      case c if c.equals('o') => 'R'
-      case c if c.equals('u') => '4'
-      case c => c
-    }
+
+    val cipherMap = Map('a' -> 'L', 'e' -> '9', 'i' -> '$', 'o' -> 'R', 'u' -> '4')
+    vowelsList.map((x: Char) => cipherMap.getOrElse(x, x))
   }
 }

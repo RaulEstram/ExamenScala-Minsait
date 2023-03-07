@@ -5,7 +5,7 @@ import models.TrianguloPascal
 object Problema4 {
   def main(args: Array[String]): Unit = {
 
-    val nivelTriangulo: Int = 5
+    val nivelTriangulo: Int = 4
 
     println(TrianguloPascal(nivelTriangulo))
 
